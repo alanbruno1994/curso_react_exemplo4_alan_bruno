@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useRef, useState } from 'react';
 import './App.css';
+import Modal from './Modal';
+
 
 function App() {
+  const referenceInput=useRef<HTMLInputElement>(null)
+  const [view,setView]=useState(false)
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <input ref={referenceInput}></input>
+        <button onClick={_=>setView(!view)}>View or No</button>
+        {view ? <Modal>{referenceInput && referenceInput.current? referenceInput.current.value : '' }</Modal>:''}
     </div>
   );
 }

@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html{
+  background-color: darkgray;
+
+}
+
+*{
+  box-sizing: border-box;
+}
+
+[id="msg-root"]{
+  text-align: center;
+}
